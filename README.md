@@ -1,4 +1,4 @@
-# Grupo ATTOS - G6
+# Re.vira - Grupo ATTOS G6
 
 **Integrantes do grupo - CC**
 - Bruno Ribeiro
