@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Nome da Empresa -->
+        <EditText
+            android:id="@+id/edtNomeEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome da Empresa"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- CNPJ -->
+        <EditText
+            android:id="@+id/edtCnpj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CNPJ"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- CEP -->
+        <EditText
+            android:id="@+id/edtCep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CEP"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- Cidade -->
+        <EditText
+            android:id="@+id/edtCidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cidade"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- Logradouro -->
+        <EditText
+            android:id="@+id/edtLogradouro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Logradouro"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- Bairro -->
+        <EditText
+            android:id="@+id/edtBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bairro"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- Número -->
+        <EditText
+            android:id="@+id/edtNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número"
+            android:padding="12dp"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <!-- Botão de Cadastrar Empresa -->
+        <Button
+            android:id="@+id/btnCadastrarEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Empresa"
+            android:padding="12dp"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+</ScrollView>

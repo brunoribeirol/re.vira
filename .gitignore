@@ -22,3 +22,23 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Sistema operacional
+.DS_Store
+
+# Configurações do IntelliJ IDEA
+.idea/
+
+# Gradle
+.gradle/
+build/
+
+# Arquivos do wrapper do Gradle
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+
+# Arquivos de configuração local
+local.properties
+
+# Outros
+*.iml
