@@ -17,7 +17,7 @@
 ## Requisitos SR1
 
 ### Diagrama de classes 
-[https://drive.google.com/file/d/1hWVb05Stz5Mt9mW3MBEoMHl6Z12QngpK/view]
+[https://drive.google.com/file/d/1oWiNGZfYueZnamQFDUbc7w6tOcGuLFus/view]
 
 ### Desenvolvimento do processo
 
