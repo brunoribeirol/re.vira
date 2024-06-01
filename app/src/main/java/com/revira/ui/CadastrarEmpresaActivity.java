@@ -1,5 +1,7 @@
 package com.revira.ui;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -9,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.revira.R;
 
+import com.revira.data.EmpresaContract;
+import com.revira.data.EmpresaDbHelper;
 import com.revira.models.Empresa;
 import com.revira.models.Endereco;
 import com.revira.models.Produto;
@@ -72,7 +76,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(nomeEmpresa) || TextUtils.isEmpty(cnpj) ||
                 TextUtils.isEmpty(cep) || TextUtils.isEmpty(cidade) ||
                 TextUtils.isEmpty(logradouro) || TextUtils.isEmpty(bairro) ||
-                TextUtils.isEmpty(String.valueOf(numero)) || produtosList.isEmpty()) {
+                TextUtils.isEmpty(String.valueOf(numero))) {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -86,8 +90,23 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         Empresa empresa = new Empresa(nomeEmpresa, cnpj, endereco, produtosList);
 
         // Aqui você pode adicionar código para salvar a empresa em um banco de dados ou enviar para um servidor
+        EmpresaDbHelper dbHelper = new EmpresaDbHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
+        ContentValues values = new ContentValues();
+
+        values.put(EmpresaContract.EmpresaEntry.COLUMN_NOME, empresa.getNome());
+        values.put(EmpresaContract.EmpresaEntry.COLUMN_CNPJ, empresa.getCnpj());
+//        values.put(EmpresaContract.EmpresaEntry.COLUMN_ENDERECO, empresa.getEndereco());
+//        values.put(EmpresaContract.EmpresaEntry.COLUMN_PRODUTOS, empresa.getProdutos());
+
+        long newRowId = db.insert(EmpresaContract.EmpresaEntry.TABLE_NAME, null, values);
+
+        if (newRowId != -1) {
+            Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+        }
 
         // Limpar os campos após o cadastro
         edtNomeEmpresa.setText("");
