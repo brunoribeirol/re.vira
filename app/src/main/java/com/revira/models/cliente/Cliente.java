@@ -1,4 +1,4 @@
-package com.revira.models;
+package com.revira.models.cliente;
 
 public class Cliente {
     private String nome;

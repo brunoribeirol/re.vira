@@ -1,4 +1,7 @@
-package com.revira.models;
+package com.revira.models.empresa;
+
+import com.revira.models.Endereco;
+import com.revira.models.Produto;
 
 import java.util.List;
 

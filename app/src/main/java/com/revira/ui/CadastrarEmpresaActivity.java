@@ -13,13 +13,12 @@ import com.revira.R;
 
 import com.revira.data.EmpresaContract;
 import com.revira.data.EmpresaDbHelper;
-import com.revira.models.Empresa;
+import com.revira.models.empresa.Empresa;
 import com.revira.models.Endereco;
 import com.revira.models.Produto;
 import com.revira.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class CadastrarEmpresaActivity extends AppCompatActivity {
 
