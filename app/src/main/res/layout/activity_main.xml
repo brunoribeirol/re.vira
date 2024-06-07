@@ -1,56 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPapelao"
     android:padding="16dp">
 
+    <!-- Título -->
     <TextView
+        android:id="@+id/re_vira"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Re.vira"
-        android:textSize="50sp"
-        android:textColor="@color/colorBackground"
         android:gravity="center"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="50dp"/>
+        android:padding="16dp"
+        android:text="re.vira"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp" />
 
+    <!-- Espaço para Foto -->
+    <ImageView
+        android:id="@+id/re_vira_png"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/capa_revira" />
+
+    <!-- Espaço para CPF/CNPJ -->
+    <EditText
+        android:id="@+id/cpf_cnpj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF/CNPJ"
+        android:inputType="number"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp" />
+
+    <!-- Espaço para Senha -->
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp" />
+
+    <!-- LinearLayout para Botões -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
 
         <Button
-            android:id="@+id/btnCadastrarEmpresa"
-            android:layout_width="match_parent"
+            android:id="@+id/login"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Cadastrar Empresa"
-            android:textColor="@color/colorBackground"
-            android:background="@drawable/button_background"
-            android:layout_marginBottom="16dp"
-            android:onClick="onCadastrarEmpresaClick"/>
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Login"
-            android:textColor="@color/colorBackground"
-            android:background="@drawable/button_background"
-            android:layout_marginBottom="16dp"
-            android:onClick="onLoginClick"/>
+            android:textSize="28sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/colorPrimary" />
 
         <Button
-            android:id="@+id/btnVerificarPontosColeta"
-            android:layout_width="match_parent"
+            android:id="@+id/cadastrar"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Verificar Pontos de Coleta"
-            android:textColor="@color/colorBackground"
-            android:background="@drawable/button_background"
-            android:onClick="onVerificarPontosColetaClick"/>
+            android:layout_weight="1"
+            android:text="Cadastrar"
+            android:textSize="28sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/colorPrimary" />
     </LinearLayout>
-
 </LinearLayout>

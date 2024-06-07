@@ -2,10 +2,11 @@ package com.revira.models.empresa;
 
 import com.revira.models.Endereco;
 import com.revira.models.Produto;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class Empresa {
+public class Empresa implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String nome;
     private String cnpj;
     private Endereco endereco;

@@ -2,12 +2,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPapelao"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
 
         <!-- Nome da Empresa -->
         <EditText
@@ -15,9 +18,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome da Empresa"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
+
+        <!-- Segmento da Empresa -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Segmento da Empresa"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSegment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
 
         <!-- CNPJ -->
         <EditText
@@ -25,8 +43,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CNPJ"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
         <!-- CEP -->
@@ -35,8 +54,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CEP"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
         <!-- Cidade -->
@@ -45,8 +65,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cidade"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
         <!-- Logradouro -->
@@ -55,8 +76,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Logradouro"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
         <!-- Bairro -->
@@ -65,8 +87,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bairro"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
         <!-- Número -->
@@ -75,18 +98,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Número"
-            android:padding="12dp"
             android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
         <!-- Botão de Cadastrar Empresa -->
         <Button
             android:id="@+id/btnCadastrarEmpresa"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastrar Empresa"
+            android:background="@color/colorPrimary"
+            android:minHeight="48dp"
             android:padding="12dp"
-            android:minHeight="48dp" />
+            android:text="Cadastrar Empresa"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp" />
 
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/item_background"
+    android:layout_marginBottom="8dp">
+
+    <!-- Nome da Empresa -->
+    <TextView
+        android:id="@+id/tvNomeEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome da Empresa"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Segmento -->
+    <TextView
+        android:id="@+id/tvSegmento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Segmento"
+        android:textSize="16sp" />
+</LinearLayout>
