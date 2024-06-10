@@ -1,61 +1,39 @@
-//package com.revira.models.empresa;
-//
-//import java.io.Serializable;
-//import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
-//
-//public class EmpresaDAO
-//{
-//    private CadastroObjetos cadastro = new CadastroObjetos(Empresa.class);
-//
-//    private String obterIdUnico(Empresa empresa) {
-//        return empresa.getCnpj();
-//    }
-//
-//    public Empresa buscar(String cnpj) {
-//        return (Empresa) cadastro.buscar(cnpj);
-//    }
-//
-//    public boolean incluir(Empresa empresa) {
-//        String idUnico = obterIdUnico(empresa);
-//        Empresa empresa1 = buscar(idUnico);
-//        if (empresa1 == null) {
-//            cadastro.incluir(empresa, idUnico);
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public boolean alterar(Empresa empresa) {
-//        String idUnico = obterIdUnico(empresa);
-//        Empresa empresa1 = buscar(idUnico);
-//        if (empresa1 != null) {
-//            cadastro.alterar(empresa, idUnico);
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public boolean excluir(String cnpj) {
-//        Empresa empresa1 = buscar(cnpj);
-//        if (empresa1 != null) {
-//            cadastro.excluir(cnpj);
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public Empresa[] buscarTodos() {
-//        Serializable[] res = cadastro.buscarTodos();
-//        if (res == null) {
-//            return null;
-//        } else {
-//            Empresa[] empresas = new Empresa[res.length];
-//            int i = 0;
-//            for (Serializable reg : res) {
-//                empresas[i] = (Empresa) reg;
-//                i++;
-//            }
-//            return empresas;
-//        }
-//    }
-//}
+package com.revira.models.empresa;
+
+import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
+
+public class EmpresaDAO {
+    private CadastroObjetos cadastro;
+
+    public EmpresaDAO(Class<?> tipo) {
+        this.cadastro = new CadastroObjetos(tipo);
+    }
+
+    public boolean incluir(Empresa empresa) {
+        String cnpj = empresa.getCnpj();
+        Empresa empresaExistente = buscar(cnpj);
+        if (empresaExistente == null) {
+            cadastro.incluir(empresa, cnpj);
+            System.out.println("Empresa incluída com sucesso!");
+            return true;
+        } else {
+            System.out.println("Erro ao incluir a empresa: Já existe uma empresa com o mesmo CNPJ.");
+            return false;
+        }
+    }
+
+    public void alterar(Empresa empresa) {
+        String cnpj = empresa.getCnpj();
+        cadastro.alterar(empresa, cnpj);
+        System.out.println("Empresa alterada com sucesso!");
+    }
+
+    public void excluir(String cnpj) {
+        cadastro.excluir(cnpj);
+        System.out.println("Empresa excluída com sucesso!");
+    }
+
+    public Empresa buscar(String cnpj) {
+        return (Empresa) cadastro.buscar(cnpj);
+    }
+}

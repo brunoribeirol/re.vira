@@ -1,6 +1,10 @@
 package com.revira.models;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String cep;
     private String cidade;
     private String logradouro;
@@ -19,19 +23,39 @@ public class Endereco {
         return cep;
     }
 
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
     public String getCidade() {
         return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getLogradouro() {
         return logradouro;
     }
 
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
     public String getBairro() {
         return bairro;
     }
 
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
     public int getNumero() {
         return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 }

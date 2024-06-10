@@ -1,4 +1,5 @@
 package com.revira.models;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,14 +10,12 @@ public class Produto implements Serializable {
     private String categoria;
     private List<Produto> produtosValidos;
 
-    // Construtor
     public Produto(String nome, String categoria, List<Produto> produtosValidos) {
         this.nome = nome;
         this.categoria = categoria;
         this.produtosValidos = produtosValidos;
     }
 
-    // Getters e Setters
     public String getNome() {
         return nome;
     }

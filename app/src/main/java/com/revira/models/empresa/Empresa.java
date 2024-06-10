@@ -27,6 +27,22 @@ public class Empresa implements Serializable {
         return cnpj;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
     public Endereco getEndereco() {
         return endereco;
     }
