@@ -9,15 +9,17 @@ import java.util.List;
 public class Empresa implements Serializable {
     private static final long serialVersionUID = 1L;
     private String nome;
+    private String senha;
     private String cnpj;
     private Endereco endereco;
     private List<Produto> produtos;
 
-    public Empresa(String nome, String cnpj, Endereco endereco, List<Produto> produtos) {
+    public Empresa(String nome, String senha, String cnpj, Endereco endereco, List<Produto> produtos) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.endereco = endereco;
         this.produtos = produtos;
+        this.senha=senha;
     }
     public String getNome() {
         return nome;
@@ -25,6 +27,14 @@ public class Empresa implements Serializable {
 
     public String getCnpj() {
         return cnpj;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public void setNome(String nome) {

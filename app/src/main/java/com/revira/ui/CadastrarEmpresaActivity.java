@@ -22,7 +22,7 @@ import java.util.List;
 
 public class CadastrarEmpresaActivity extends AppCompatActivity {
 
-    private EditText edtNomeEmpresa, edtCnpj, edtCep, edtCidade, edtLogradouro, edtBairro, edtNumero;
+    private EditText edtNomeEmpresa, edtSenha, edtCnpj, edtCep, edtCidade, edtLogradouro, edtBairro, edtNumero;
     private EditText edtProdutoNome, edtProdutoCategoria;
     private Button btnAdicionarProduto, btnCadastrarEmpresa;
 
@@ -36,6 +36,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         edtNomeEmpresa = findViewById(R.id.edtNomeEmpresa);
         edtCnpj = findViewById(R.id.edtCnpj);
         edtCep = findViewById(R.id.edtCep);
+        edtSenha= findViewById(R.id.edtSenha);
         edtCidade = findViewById(R.id.edtCidade);
         edtLogradouro = findViewById(R.id.edtLogradouro);
         edtBairro = findViewById(R.id.edtBairro);
@@ -66,6 +67,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
     private void cadastrarEmpresa() {
         String nomeEmpresa = edtNomeEmpresa.getText().toString();
         String cnpj = edtCnpj.getText().toString();
+        String senha = edtSenha.getText().toString();
         String cep = edtCep.getText().toString();
         String cidade = edtCidade.getText().toString();
         String logradouro = edtLogradouro.getText().toString();
@@ -86,7 +88,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         }
 
         Endereco endereco = new Endereco(cep, cidade, logradouro, bairro, numero);
-        Empresa empresa = new Empresa(nomeEmpresa, cnpj, endereco, produtosList);
+        Empresa empresa = new Empresa(nomeEmpresa, senha, cnpj, endereco, produtosList);
 
         // Aqui você pode adicionar código para salvar a empresa em um banco de dados ou enviar para um servidor
         EmpresaDbHelper dbHelper = new EmpresaDbHelper(this);
@@ -110,6 +112,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         // Limpar os campos após o cadastro
         edtNomeEmpresa.setText("");
         edtCnpj.setText("");
+        edtSenha.setText("");
         edtCep.setText("");
         edtCidade.setText("");
         edtLogradouro.setText("");
