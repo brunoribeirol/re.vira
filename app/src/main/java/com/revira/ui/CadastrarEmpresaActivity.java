@@ -1,6 +1,7 @@
 package com.revira.ui;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -36,7 +37,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         edtNomeEmpresa = findViewById(R.id.edtNomeEmpresa);
         edtCnpj = findViewById(R.id.edtCnpj);
         edtCep = findViewById(R.id.edtCep);
-        edtSenha= findViewById(R.id.edtSenha);
+        edtSenha = findViewById(R.id.edtSenha);
         edtCidade = findViewById(R.id.edtCidade);
         edtLogradouro = findViewById(R.id.edtLogradouro);
         edtBairro = findViewById(R.id.edtBairro);
@@ -72,12 +73,12 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         String cidade = edtCidade.getText().toString();
         String logradouro = edtLogradouro.getText().toString();
         String bairro = edtBairro.getText().toString();
-        int numero = Integer.parseInt(edtNumero.getText().toString());
+        String numeroStr = edtNumero.getText().toString();
 
         if (TextUtils.isEmpty(nomeEmpresa) || TextUtils.isEmpty(cnpj) ||
                 TextUtils.isEmpty(cep) || TextUtils.isEmpty(cidade) ||
                 TextUtils.isEmpty(logradouro) || TextUtils.isEmpty(bairro) ||
-                TextUtils.isEmpty(String.valueOf(numero))) {
+                TextUtils.isEmpty(numeroStr)) {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -87,10 +88,11 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
             return;
         }
 
+        int numero = Integer.parseInt(numeroStr);
+
         Endereco endereco = new Endereco(cep, cidade, logradouro, bairro, numero);
         Empresa empresa = new Empresa(nomeEmpresa, senha, cnpj, endereco, produtosList);
 
-        // Aqui você pode adicionar código para salvar a empresa em um banco de dados ou enviar para um servidor
         EmpresaDbHelper dbHelper = new EmpresaDbHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -98,13 +100,15 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
 
         values.put(EmpresaContract.EmpresaEntry.COLUMN_NOME, empresa.getNome());
         values.put(EmpresaContract.EmpresaEntry.COLUMN_CNPJ, empresa.getCnpj());
-//        values.put(EmpresaContract.EmpresaEntry.COLUMN_ENDERECO, empresa.getEndereco());
-//        values.put(EmpresaContract.EmpresaEntry.COLUMN_PRODUTOS, empresa.getProdutos());
 
         long newRowId = db.insert(EmpresaContract.EmpresaEntry.TABLE_NAME, null, values);
 
         if (newRowId != -1) {
             Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
+            // Navegar para a nova Activity
+            Intent intent = new Intent(CadastrarEmpresaActivity.this, HomePageActivity.class);
+            startActivity(intent);
+            finish(); // Opcional: finaliza a activity atual
         } else {
             Toast.makeText(this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
         }
@@ -118,6 +122,6 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         edtLogradouro.setText("");
         edtBairro.setText("");
         edtNumero.setText("");
-//        produtosList.clear();
+        produtosList.clear();
     }
 }
