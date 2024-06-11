@@ -96,10 +96,11 @@
     <!-- Botões no Canto Superior Direito -->
     <LinearLayout
         android:id="@+id/layoutBotoes"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp">
 
@@ -108,6 +109,8 @@
             android:id="@+id/btnEditarProdutos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:text="Editar Produtos"
             android:textSize="12sp"
             android:layout_marginEnd="8dp"/>
@@ -117,6 +120,8 @@
             android:id="@+id/btnExcluirEmpresa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:text="Excluir Empresa"
             android:textSize="12sp"
             android:layout_marginEnd="8dp"/>
@@ -126,6 +131,8 @@
             android:id="@+id/btnSair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:text="Sair"
             android:textSize="12sp"/>
 
