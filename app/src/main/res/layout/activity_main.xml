@@ -30,12 +30,12 @@
 
     <!-- Espaço para CPF/CNPJ -->
     <EditText
-        android:id="@+id/cpf_cnpj"
+        android:id="@+id/cnpj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CPF/CNPJ"
-        android:inputType="number"
         android:layout_marginTop="16dp"
+        android:hint="CNPJ"
+        android:inputType="number"
         android:textSize="24sp" />
 
     <!-- Espaço para Senha -->
@@ -76,4 +76,15 @@
             android:textColor="#FFFFFF"
             android:backgroundTint="@color/colorPrimary" />
     </LinearLayout>
+
+    <!-- Botão "Quero Descartar um Produto" -->
+    <Button
+        android:id="@+id/descartar_produto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quero Descartar um Produto"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

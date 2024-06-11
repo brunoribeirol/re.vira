@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPapelao"
+    android:padding="16dp">
+
+    <!-- Logo da Empresa (Centralizado) -->
+    <ImageView
+        android:id="@+id/imgLogoEmpresa"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_empresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp" />
+
+    <!-- Nome da Empresa (Centralizado e Abaixo do Logo) -->
+    <TextView
+        android:id="@+id/tvNomeEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome da Empresa"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/imgLogoEmpresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <!-- CNPJ da Empresa (Centralizado e Abaixo do Nome) -->
+    <TextView
+        android:id="@+id/tvCnpjEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CNPJ: 00.000.000/0001-00"
+        android:textSize="18sp"
+        android:layout_below="@id/tvNomeEmpresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Endereço da Empresa (Centralizado e Abaixo do CNPJ) -->
+    <TextView
+        android:id="@+id/tvEnderecoEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço: Rua Exemplo, 123"
+        android:textSize="18sp"
+        android:layout_below="@id/tvCnpjEmpresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Informações de Propaganda (do XML anterior) -->
+    <TextView
+        android:id="@+id/tvSaldoPropaganda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo de Propaganda: 20 horas"
+        android:textSize="18sp"
+        android:layout_below="@id/tvEnderecoEmpresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <!-- Quantidade de Pessoas que Viram o Anúncio -->
+    <TextView
+        android:id="@+id/tvQuantidadePessoasAnuncio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pessoas que Viram o Anúncio: 500"
+        android:textSize="18sp"
+        android:layout_below="@id/tvSaldoPropaganda"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Quantidade de Vezes que a Empresa Conquistou o Pódio -->
+    <TextView
+        android:id="@+id/tvQuantidadePodio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Vezes no Pódio: 10"
+        android:textSize="18sp"
+        android:layout_below="@id/tvQuantidadePessoasAnuncio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Quantidade de Produtos que a Empresa Recolheu -->
+    <TextView
+        android:id="@+id/tvQuantidadeProdutosRecolhidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Produtos Recolhidos: 50"
+        android:textSize="18sp"
+        android:layout_below="@id/tvQuantidadePodio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botões no Canto Superior Direito -->
+    <LinearLayout
+        android:id="@+id/layoutBotoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+        <!-- Botão Editar Produtos -->
+        <Button
+            android:id="@+id/btnEditarProdutos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Produtos"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Botão Excluir Empresa -->
+        <Button
+            android:id="@+id/btnExcluirEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excluir Empresa"
+            android:textSize="12sp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Botão Sair -->
+        <Button
+            android:id="@+id/btnSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sair"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

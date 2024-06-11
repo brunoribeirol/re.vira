@@ -10,19 +10,49 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
-        <!-- Produtos -->
+
+        <!-- Título: Produtos Retornáveis -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produtos Retornáveis"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Subtítulo: Categoria da Empresa -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/product"
-            android:textSize="16sp"
+            android:text="Categoria da Empresa"
+            android:textSize="20sp"
             android:layout_marginBottom="8dp" />
 
+        <!-- Campo para inserir a categoria da empresa -->
+        <EditText
+            android:id="@+id/edtCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Categoria"
+            android:minHeight="48dp"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp" />
+
+        <!-- Subtítulo: Produtos -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Produtos Recebidos"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Campos para inserir os produtos que a empresa recebe -->
         <EditText
             android:id="@+id/edtProduct1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/product"
+            android:hint="Produto 1"
             android:minHeight="48dp"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
@@ -32,7 +62,7 @@
             android:id="@+id/edtProduct2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/product"
+            android:hint="Produto 2"
             android:minHeight="48dp"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
@@ -42,7 +72,7 @@
             android:id="@+id/edtProduct3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/product"
+            android:hint="Produto 3"
             android:minHeight="48dp"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
@@ -52,7 +82,7 @@
             android:id="@+id/edtProduct4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/product"
+            android:hint="Produto 4"
             android:minHeight="48dp"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
@@ -62,7 +92,7 @@
             android:id="@+id/edtProduct5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/product"
+            android:hint="Produto 5"
             android:minHeight="48dp"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
@@ -76,7 +106,7 @@
             android:background="@color/colorPrimary"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:text="@string/submit"
+            android:text="Enviar"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:layout_marginTop="24dp" />

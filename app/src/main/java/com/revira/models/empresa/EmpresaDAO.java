@@ -2,6 +2,10 @@ package com.revira.models.empresa;
 
 import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmpresaDAO {
     private CadastroObjetos cadastro;
 
@@ -25,7 +29,7 @@ public class EmpresaDAO {
     public void alterar(Empresa empresa) {
         String cnpj = empresa.getCnpj();
         cadastro.alterar(empresa, cnpj);
-        System.out.println("Empresa alterada com sucesso!");
+        System.out.println("Produtos alterados com sucesso!");
     }
 
     public void excluir(String cnpj) {

@@ -6,7 +6,19 @@
     android:background="@color/colorPapelao"
     android:padding="16dp">
 
-    <!-- Nome da Empresa -->
+    <!-- Botão no Canto Superior Direito -->
+    <Button
+        android:id="@+id/btnNomeEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome da Empresa"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp" />
+
+    <!-- Nome da Empresa (Centralizado) -->
     <TextView
         android:id="@+id/tvNomeEmpresa"
         android:layout_width="wrap_content"
@@ -15,18 +27,51 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="128dp" />
 
-    <!-- Pontuação da Empresa -->
+    <!-- Subtítulo: Sua Pontuação -->
     <TextView
         android:id="@+id/tvPontuacaoEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pontuação: 4.5"
+        android:text="Sua Pontuação: 4.5"
         android:textSize="18sp"
         android:layout_below="@id/tvNomeEmpresa"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="16dp" />
+
+    <!-- Subtítulo: Saldo de Propaganda -->
+    <TextView
+        android:id="@+id/tvSaldoPropaganda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo de Propaganda: 20 horas"
+        android:textSize="18sp"
+        android:layout_below="@id/tvPontuacaoEmpresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Subtítulo: Quantidade de Visualizações do Anúncio -->
+    <TextView
+        android:id="@+id/tvQuantidadeVisualizacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visualizações do Anúncio: 500"
+        android:textSize="18sp"
+        android:layout_below="@id/tvSaldoPropaganda"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Subtítulo: Histórico de Produtos Recebidos -->
+    <TextView
+        android:id="@+id/tvHistoricoProdutos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histórico de Produtos Recebidos:"
+        android:textSize="18sp"
+        android:layout_below="@id/tvQuantidadeVisualizacoes"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
 
     <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

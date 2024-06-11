@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPapelao"
+    android:padding="16dp">
+
+    <!-- Título: Pontos de Coleta -->
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pontos de Coleta"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <!-- Empresa A -->
+    <LinearLayout
+        android:id="@+id/layoutEmpresaA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitulo"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/tvNomeEmpresaA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empresa A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvCnpjA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNPJ A: 12345678901234"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvEnderecoA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço A: Rua Fictícia, 123"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvProdutosRecebidosA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produtos Recebidos A:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvDistanciaA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância A: 5km"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Empresa B -->
+    <!-- Adicione aqui a estrutura para a Empresa B -->
+
+    <!-- Empresa C -->
+    <!-- Adicione aqui a estrutura para a Empresa C -->
+
+    <!-- Empresa D -->
+    <!-- Adicione aqui a estrutura para a Empresa D -->
+
+</RelativeLayout>
