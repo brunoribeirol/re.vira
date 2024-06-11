@@ -1,72 +1,169 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPapelao"
     android:padding="16dp">
 
-    <!-- Título: Pontos de Coleta -->
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pontos de Coleta"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
-
-    <!-- Empresa A -->
     <LinearLayout
-        android:id="@+id/layoutEmpresaA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvTitulo"
         android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:padding="16dp">
 
+        <!-- Título: Pontos de Coleta -->
         <TextView
-            android:id="@+id/tvNomeEmpresaA"
+            android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Empresa A"
-            android:textSize="18sp" />
+            android:text="Pontos de Coleta"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
 
+        <!-- Empresa 1 -->
         <TextView
-            android:id="@+id/tvCnpjA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CNPJ A: 12345678901234"
-            android:textSize="18sp" />
+            android:text="Nome da Empresa: Empresa Fictícia 1"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvEnderecoA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Endereço A: Rua Fictícia, 123"
-            android:textSize="18sp" />
+            android:text="CNPJ: 00.000.000/0001-00"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvProdutosRecebidosA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Produtos Recebidos A:"
-            android:textSize="18sp" />
+            android:text="Endereço: Rua Exemplo, 123"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvDistanciaA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distância A: 5km"
-            android:textSize="18sp" />
+            android:text="Produtos Recebidos: Produto 1, Produto 2, Produto 3, Produto 4, Produto 5"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância: 5 km"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Empresa 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome da Empresa: Empresa Fictícia 2"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNPJ: 11.111.111/1111-11"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço: Avenida Teste, 456"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produtos Recebidos: Produto 6, Produto 7, Produto 8, Produto 9, Produto 10"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância: 10 km"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Empresa 3 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome da Empresa: Empresa Fictícia 3"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNPJ: 22.222.222/2222-22"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço: Praça Exemplo, 789"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produtos Recebidos: Produto 11, Produto 12, Produto 13, Produto 14, Produto 15"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância: 15 km"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Empresa 4 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome da Empresa: Empresa Fictícia 4"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNPJ: 33.333.333/3333-33"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço: Estrada Exemplo, 1011"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Produtos Recebidos: Produto 16, Produto 17, Produto 18, Produto 19, Produto 20"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distância: 20 km"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
     </LinearLayout>
-
-    <!-- Empresa B -->
-    <!-- Adicione aqui a estrutura para a Empresa B -->
-
-    <!-- Empresa C -->
-    <!-- Adicione aqui a estrutura para a Empresa C -->
-
-    <!-- Empresa D -->
-    <!-- Adicione aqui a estrutura para a Empresa D -->
-
-</RelativeLayout>
+</ScrollView>
