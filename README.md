@@ -28,3 +28,41 @@ Ferramentas utilizadas:
 
 Metodologia: 
 - Scrumban
+
+## Requisitos SR2
+
+### Diagrama de classes
+[https://drive.google.com/file/d/1oWiNGZfYueZnamQFDUbc7w6tOcGuLFus/view]
+
+### Desenvolvimento do processo
+
+Ferramentas utilizadas:
+- Draw.io
+- AndroidStuidio
+- GitHub
+
+Metodologia: 
+- Scrumban
+
+Linguagem: 
+- Java
+
+Processo:
+- Arquitetura em camadas
+- Utilizando aprendizados da cadeira POO
+
+Dificuldades:
+- Conexão entre as telas e o banco de dados
+
+### Codificação
+
+Caso de uso:
+-CRUD de empresa
+
+Pilares da OO utilizados:
+-Abstração e encapsulamento 
+
+### Observação
+
+Temos dois repositórios no github, o atual, que possui a visualização das telas do aplicativo e esse: [https://github.com/Victorgalves/requisitosOO/tree/master], que possui os requisitos de OO, arquitetura em camadas e caso de uso.
+
