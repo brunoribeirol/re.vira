@@ -20,6 +20,16 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp" />
 
+    <!-- Logo da Empresa -->
+    <ImageView
+        android:id="@+id/ivLogoEmpresa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/btnNomeEmpresa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/ambev_logo" />
+
     <!-- Nome da Empresa (Centralizado) -->
     <TextView
         android:id="@+id/tvNomeEmpresa"
@@ -28,8 +38,9 @@
         android:text="Nome da Empresa"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_below="@id/ivLogoEmpresa"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="128dp" />
+        android:layout_marginTop="16dp" />
 
     <!-- Subtítulo: Sua Pontuação -->
     <TextView

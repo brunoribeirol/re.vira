@@ -39,6 +39,24 @@
             tools:ignore="MissingClass">
         </activity>
 
+        <activity
+            android:name="com.revira.ui.ProdutosRetornaveisActivity"
+            android:label="Produtos Retornáveis"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ui.EditarProdutosActivity"
+            android:label="Editar Produtos"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ui.PontosColetaActivity"
+            android:label="Pontos de Coleta"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
