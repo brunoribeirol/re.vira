@@ -100,25 +100,9 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         // Cria o objeto Empresa com os valores dos campos e a lista de produtos vazia
         Empresa empresa = new Empresa(nomeEmpresa, senha, cnpj, endereco, produtosList);
 
-//        // Tenta incluir a empresa usando o EmpresaMediator
-//        boolean sucesso = empresaMediator.incluirEmpresa(nomeEmpresa, senha, cnpj, endereco);
-//
-//        if (sucesso) {
-//            // Se o cadastro for bem-sucedido, exibe uma mensagem de sucesso
-//            Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
-//            Log.d(TAG, "Empresa cadastrada com sucesso: " + cnpj);
-
             // Abre a tela de ProdutosRetornaveisActivity
             Intent intent = new Intent(CadastrarEmpresaActivity.this, ProdutosRetornaveisActivity.class);
             startActivity(intent);
-
-//            // Finaliza a atividade atual
-//            finish();
-//        } else {
-//            // Se ocorrer um erro durante o cadastro, exibe uma mensagem de erro
-//            Toast.makeText(this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
-//            Log.d(TAG, "Erro ao cadastrar empresa: " + cnpj);
-//        }
 
 
         // Limpa os campos após o cadastro
