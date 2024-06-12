@@ -1,5 +1,6 @@
 package com.revira.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.revira.R;
 public class ProdutosRetornaveisActivity extends AppCompatActivity {
 
     private EditText edtCategory, edtProduct1, edtProduct2, edtProduct3, edtProduct4, edtProduct5;
-    private Button btnSubmit;
+    private Button btnEnviar, btnVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,23 @@ public class ProdutosRetornaveisActivity extends AppCompatActivity {
         edtProduct3 = findViewById(R.id.edtProduct3);
         edtProduct4 = findViewById(R.id.edtProduct4);
         edtProduct5 = findViewById(R.id.edtProduct5);
-        btnSubmit = findViewById(R.id.btnSubmit);
+        btnEnviar = findViewById(R.id.btnEnviar);
+        btnVoltar = findViewById(R.id.btnVoltar);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 submitForm();
+            }
+        });
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Voltar para a activity CadastrarEmpresaActivity
+                Intent intent = new Intent(ProdutosRetornaveisActivity.this, CadastrarEmpresaActivity.class);
+                startActivity(intent);
+                finish(); // Encerra a atividade atual para evitar voltar para ela com o botão de retorno
             }
         });
     }
@@ -53,6 +65,10 @@ public class ProdutosRetornaveisActivity extends AppCompatActivity {
         // Aqui você pode adicionar a lógica para lidar com os dados, como salvar no banco de dados ou enviar para um servidor
 
         Toast.makeText(this, "Dados enviados com sucesso", Toast.LENGTH_SHORT).show();
+
+        // Abre a HomePageActivity
+        Intent intent = new Intent(ProdutosRetornaveisActivity.this, HomePageActivity.class);
+        startActivity(intent);
 
         // Limpar os campos após o envio
         edtCategory.setText("");

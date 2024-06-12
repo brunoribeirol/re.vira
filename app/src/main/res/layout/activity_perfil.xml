@@ -20,7 +20,7 @@
         android:id="@+id/tvNomeEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome da Empresa"
+        android:text="Ambev"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_below="@id/imgLogoEmpresa"
@@ -32,7 +32,7 @@
         android:id="@+id/tvCnpjEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CNPJ: 00.000.000/0001-00"
+        android:text="CNPJ: 45.678.901/0001-89"
         android:textSize="18sp"
         android:layout_below="@id/tvNomeEmpresa"
         android:layout_centerHorizontal="true"
@@ -43,7 +43,7 @@
         android:id="@+id/tvEnderecoEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Endereço: Rua Exemplo, 123"
+        android:text="Rua XV de Novembro, 987, Centro, Curitiba - PR"
         android:textSize="18sp"
         android:layout_below="@id/tvCnpjEmpresa"
         android:layout_centerHorizontal="true"
@@ -58,7 +58,7 @@
         android:textSize="18sp"
         android:layout_below="@id/tvEnderecoEmpresa"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="16dp" />
 
     <!-- Quantidade de Pessoas que Viram o Anúncio -->
     <TextView

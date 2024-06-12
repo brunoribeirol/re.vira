@@ -19,7 +19,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp"
-        android:onClick="btnNomeEmpresa" />/>
+        android:onClick="btnNomeEmpresa" />
 
     <!-- Logo da Empresa -->
     <ImageView
@@ -36,7 +36,7 @@
         android:id="@+id/tvNomeEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome da Empresa"
+        android:text="Ambev"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_below="@id/ivLogoEmpresa"
@@ -81,10 +81,12 @@
         android:id="@+id/tvHistoricoProdutos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Histórico de Produtos Recebidos:"
+        android:text="Histórico de Produtos Recebidos: 256 Garrafas de Vidro, 1567 Latas de alumínio, 17 Embalagens de Papelão"
         android:textSize="18sp"
         android:layout_below="@id/tvQuantidadeVisualizacoes"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textAlignment="center" />
 
 </RelativeLayout>

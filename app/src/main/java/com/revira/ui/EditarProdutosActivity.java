@@ -13,7 +13,7 @@ import com.revira.R;
 public class EditarProdutosActivity extends AppCompatActivity {
 
     private EditText edtProduct1, edtProduct2, edtProduct3, edtProduct4, edtProduct5;
-    private Button btnSave, btnCancel;
+    private Button btnSalvar, btnVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,11 @@ public class EditarProdutosActivity extends AppCompatActivity {
         edtProduct5 = findViewById(R.id.edtProduct5);
 
         // Inicializa os botões
-        btnSave = findViewById(R.id.btnSave);
-        btnCancel = findViewById(R.id.btnCancel);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnVoltar = findViewById(R.id.btnVoltar);
 
         // Define o comportamento do botão "Salvar"
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveProducts();
@@ -40,7 +40,7 @@ public class EditarProdutosActivity extends AppCompatActivity {
         });
 
         // Define o comportamento do botão "Cancelar"
-        btnCancel.setOnClickListener(new View.OnClickListener() {
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cancelEditing();

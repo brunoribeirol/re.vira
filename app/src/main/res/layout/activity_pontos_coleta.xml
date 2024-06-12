@@ -43,50 +43,41 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="24dp" />
 
-        <!-- Título: Pontos de Coleta -->
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pontos de Coleta"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp" />
-
         <!-- Empresa 1 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome da Empresa: Empresa Fictícia 1"
+            android:text="Nome da Empresa: TechNova Solutions"
             android:textSize="18sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CNPJ: 00.000.000/0001-00"
+            android:text="CNPJ: 12.345.678/0001-90"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Endereço: Rua Exemplo, 123"
+            android:text="Endereço: Avenida Paulista, 1578, Bela Vista, São Paulo - SP, CEP: 01310-200"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Produtos Recebidos: Produto 1, Produto 2, Produto 3, Produto 4, Produto 5"
+            android:text="Produtos Recebidos:  Placas-mãe de computadores,  Cartuchos de toner e tinta, Baterias de notebooks"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distância: 5 km"
+            android:text="Distância: 5.7km"
             android:textSize="16sp"
             android:layout_marginBottom="24dp" />
 
@@ -94,35 +85,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome da Empresa: Empresa Fictícia 2"
+            android:text="Nome da Empresa: BioHealth Pharmaceuticals"
             android:textSize="18sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CNPJ: 11.111.111/1111-11"
+            android:text="CNPJ: 98.765.432/0001-09"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Endereço: Avenida Teste, 456"
+            android:text="Endereço: Rua dos Andradas, 500, Centro Histórico, Porto Alegre - RS, CEP: 90020-005"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Produtos Recebidos: Produto 6, Produto 7, Produto 8, Produto 9, Produto 10"
+            android:text="Produtos Recebidos: Frascos de vidro de medicamentos usados, Equipamentos de laboratório desativados, Seringas e agulhas descartáveis"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distância: 10 km"
+            android:text="Distância: 1.3km"
             android:textSize="16sp"
             android:layout_marginBottom="24dp" />
 
@@ -130,73 +122,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome da Empresa: Empresa Fictícia 3"
+            android:text="Nome da Empresa: EcoEnergia Renovável"
             android:textSize="18sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CNPJ: 22.222.222/2222-22"
+            android:text="CNPJ: 23.456.789/0001-67"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Endereço: Praça Exemplo, 789"
+            android:text="Endereço: Avenida Rio Branco, 1234, Centro, Rio de Janeiro - RJ, CEP: 20040-002"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Produtos Recebidos: Produto 11, Produto 12, Produto 13, Produto 14, Produto 15"
+            android:text="Produtos Recebidos: Painéis solares antigos, Baterias de armazenamento usadas, Cabos e fios elétricos"
             android:textSize="16sp"
             android:layout_marginBottom="4dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distância: 15 km"
+            android:text="Distância: 15.3km"
             android:textSize="16sp"
             android:layout_marginBottom="24dp" />
 
-        <!-- Empresa 4 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome da Empresa: Empresa Fictícia 4"
-            android:textSize="18sp"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CNPJ: 33.333.333/3333-33"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Endereço: Estrada Exemplo, 1011"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Produtos Recebidos: Produto 16, Produto 17, Produto 18, Produto 19, Produto 20"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Distância: 20 km"
-            android:textSize="16sp"
-            android:layout_marginBottom="24dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.revira.MainActivity;
 import com.revira.R;
 import com.revira.models.Endereco;
 import com.revira.models.Produto;
@@ -46,12 +47,17 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
 
         empresaMediator = new EmpresaMediator(Empresa.class);
 
-        btnCadastrarEmpresa.setOnClickListener(v -> cadastrarEmpresa());
+        // Configura o clique do botão "Cadastrar Empresa"
+        btnCadastrarEmpresa.setOnClickListener(v -> {
+            // Chama o método cadastrarEmpresa() ao clicar no botão
+            cadastrarEmpresa();
+        });
     }
 
     private void cadastrarEmpresa() {
         Log.d(TAG, "Iniciando cadastro de empresa");
 
+        // Obtém os valores dos campos
         String nomeEmpresa = edtNomeEmpresa.getText().toString();
         String cnpj = edtCnpj.getText().toString();
         String senha = edtSenha.getText().toString();
@@ -61,6 +67,7 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         String bairro = edtBairro.getText().toString();
         String numeroStr = edtNumero.getText().toString();
 
+        // Verifica se todos os campos estão preenchidos
         if (TextUtils.isEmpty(nomeEmpresa) || TextUtils.isEmpty(cnpj) ||
                 TextUtils.isEmpty(cep) || TextUtils.isEmpty(cidade) ||
                 TextUtils.isEmpty(logradouro) || TextUtils.isEmpty(bairro) ||
@@ -70,12 +77,14 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
             return;
         }
 
+        // Verifica se o CNPJ é válido
         if (!Utils.validadorCnpj(cnpj)) {
             Toast.makeText(this, "CNPJ inválido", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "CNPJ inválido: " + cnpj);
             return;
         }
 
+        // Converte o número para inteiro
         int numero;
         try {
             numero = Integer.parseInt(numeroStr);
@@ -85,23 +94,44 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
             return;
         }
 
+        // Cria o objeto Endereco com os valores dos campos
         Endereco endereco = new Endereco(cep, cidade, logradouro, bairro, numero);
+
+        // Cria o objeto Empresa com os valores dos campos e a lista de produtos vazia
         Empresa empresa = new Empresa(nomeEmpresa, senha, cnpj, endereco, produtosList);
 
-        boolean sucesso = empresaMediator.incluirEmpresa(nomeEmpresa, senha, cnpj, endereco);
+//        // Tenta incluir a empresa usando o EmpresaMediator
+//        boolean sucesso = empresaMediator.incluirEmpresa(nomeEmpresa, senha, cnpj, endereco);
+//
+//        if (sucesso) {
+//            // Se o cadastro for bem-sucedido, exibe uma mensagem de sucesso
+//            Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
+//            Log.d(TAG, "Empresa cadastrada com sucesso: " + cnpj);
 
-        if (sucesso) {
-            Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "Empresa cadastrada com sucesso: " + cnpj);
-            Intent intent = new Intent(CadastrarEmpresaActivity.this, HomePageActivity.class);
+            // Abre a tela de ProdutosRetornaveisActivity
+            Intent intent = new Intent(CadastrarEmpresaActivity.this, ProdutosRetornaveisActivity.class);
             startActivity(intent);
-            finish();
-        } else {
-            Toast.makeText(this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "Erro ao cadastrar empresa: " + cnpj);
-        }
 
+//            // Finaliza a atividade atual
+//            finish();
+//        } else {
+//            // Se ocorrer um erro durante o cadastro, exibe uma mensagem de erro
+//            Toast.makeText(this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+//            Log.d(TAG, "Erro ao cadastrar empresa: " + cnpj);
+//        }
+
+
+        // Limpa os campos após o cadastro
         limparCampos();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        // Chama a MainActivity quando o botão de voltar for pressionado
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish(); // Finaliza a atividade atual para evitar empilhar várias atividades na parte de trás
     }
 
     private void limparCampos() {

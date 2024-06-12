@@ -78,26 +78,6 @@
             android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/edtProduct4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Produto 4"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/edtProduct5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Produto 5"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="16sp" />
-
         <!-- Layout Horizontal para os Botões -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -107,7 +87,7 @@
 
             <!-- Botão de Voltar -->
             <Button
-                android:id="@+id/btnBack"
+                android:id="@+id/btnVoltar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -122,7 +102,7 @@
 
             <!-- Botão de Enviar -->
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnEnviar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
