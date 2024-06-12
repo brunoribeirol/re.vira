@@ -98,18 +98,43 @@
             android:layout_marginBottom="16dp"
             android:textSize="16sp" />
 
-        <!-- Botão de Enviar -->
-        <Button
-            android:id="@+id/btnSubmit"
+        <!-- Layout Horizontal para os Botões -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:minHeight="48dp"
-            android:padding="12dp"
-            android:text="Enviar"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:layout_marginTop="24dp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <!-- Botão de Voltar -->
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:text="Voltar"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                android:onClick="btnVoltar" />
+
+            <!-- Botão de Enviar -->
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:text="Enviar"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:onClick="btnEnviar" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

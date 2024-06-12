@@ -1,33 +1,33 @@
 package com.revira.ui;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.revira.R;
-
-import com.revira.data.EmpresaContract;
-import com.revira.data.EmpresaDbHelper;
-import com.revira.models.empresa.Empresa;
 import com.revira.models.Endereco;
 import com.revira.models.Produto;
+import com.revira.models.empresa.Empresa;
+import com.revira.models.empresa.EmpresaMediator;
 import com.revira.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CadastrarEmpresaActivity extends AppCompatActivity {
 
     private EditText edtNomeEmpresa, edtSenha, edtCnpj, edtCep, edtCidade, edtLogradouro, edtBairro, edtNumero;
-    private EditText edtProdutoNome, edtProdutoCategoria;
-    private Button btnAdicionarProduto, btnCadastrarEmpresa;
+    private Button btnCadastrarEmpresa;
 
     private List<Produto> produtosList = new ArrayList<>();
+    private EmpresaMediator empresaMediator;
+
+    private static final String TAG = "CadastrarEmpresaActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,28 +44,14 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         edtNumero = findViewById(R.id.edtNumero);
         btnCadastrarEmpresa = findViewById(R.id.btnCadastrarEmpresa);
 
-//        btnAdicionarProduto.setOnClickListener(v -> adicionarProduto());
+        empresaMediator = new EmpresaMediator(Empresa.class);
+
         btnCadastrarEmpresa.setOnClickListener(v -> cadastrarEmpresa());
     }
 
-//    private void adicionarProduto() {
-//        String nomeProduto = edtProdutoNome.getText().toString();
-//        String categoriaProduto = edtProdutoCategoria.getText().toString();
-//
-//        if (TextUtils.isEmpty(nomeProduto) || TextUtils.isEmpty(categoriaProduto)) {
-//            Toast.makeText(this, "Preencha todos os campos do produto", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        Produto produto = new Produto(nomeProduto, categoriaProduto, new ArrayList<>());
-//        produtosList.add(produto);
-//
-//        Toast.makeText(this, "Produto adicionado", Toast.LENGTH_SHORT).show();
-//        edtProdutoNome.setText("");
-//        edtProdutoCategoria.setText("");
-//    }
-
     private void cadastrarEmpresa() {
+        Log.d(TAG, "Iniciando cadastro de empresa");
+
         String nomeEmpresa = edtNomeEmpresa.getText().toString();
         String cnpj = edtCnpj.getText().toString();
         String senha = edtSenha.getText().toString();
@@ -78,42 +64,47 @@ public class CadastrarEmpresaActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(nomeEmpresa) || TextUtils.isEmpty(cnpj) ||
                 TextUtils.isEmpty(cep) || TextUtils.isEmpty(cidade) ||
                 TextUtils.isEmpty(logradouro) || TextUtils.isEmpty(bairro) ||
-                TextUtils.isEmpty(numeroStr)) {
+                TextUtils.isEmpty(numeroStr) || TextUtils.isEmpty(senha)) {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Campos obrigatórios não preenchidos");
             return;
         }
 
         if (!Utils.validadorCnpj(cnpj)) {
             Toast.makeText(this, "CNPJ inválido", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "CNPJ inválido: " + cnpj);
             return;
         }
 
-        int numero = Integer.parseInt(numeroStr);
+        int numero;
+        try {
+            numero = Integer.parseInt(numeroStr);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Número inválido", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Número inválido: " + numeroStr);
+            return;
+        }
 
         Endereco endereco = new Endereco(cep, cidade, logradouro, bairro, numero);
         Empresa empresa = new Empresa(nomeEmpresa, senha, cnpj, endereco, produtosList);
 
-        EmpresaDbHelper dbHelper = new EmpresaDbHelper(this);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        boolean sucesso = empresaMediator.incluirEmpresa(nomeEmpresa, senha, cnpj, endereco);
 
-        ContentValues values = new ContentValues();
-
-        values.put(EmpresaContract.EmpresaEntry.COLUMN_NOME, empresa.getNome());
-        values.put(EmpresaContract.EmpresaEntry.COLUMN_CNPJ, empresa.getCnpj());
-
-        long newRowId = db.insert(EmpresaContract.EmpresaEntry.TABLE_NAME, null, values);
-
-        if (newRowId != -1) {
+        if (sucesso) {
             Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
-            // Navegar para a nova Activity
+            Log.d(TAG, "Empresa cadastrada com sucesso: " + cnpj);
             Intent intent = new Intent(CadastrarEmpresaActivity.this, HomePageActivity.class);
             startActivity(intent);
-            finish(); // Opcional: finaliza a activity atual
+            finish();
         } else {
             Toast.makeText(this, "Erro ao cadastrar empresa", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Erro ao cadastrar empresa: " + cnpj);
         }
 
-        // Limpar os campos após o cadastro
+        limparCampos();
+    }
+
+    private void limparCampos() {
         edtNomeEmpresa.setText("");
         edtCnpj.setText("");
         edtSenha.setText("");

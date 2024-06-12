@@ -64,7 +64,8 @@
             android:text="Login"
             android:textSize="28sp"
             android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimary" />
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="btnLogin" />
 
         <Button
             android:id="@+id/cadastrar"
@@ -74,7 +75,8 @@
             android:text="Cadastrar"
             android:textSize="28sp"
             android:textColor="#FFFFFF"
-            android:backgroundTint="@color/colorPrimary" />
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="btnCadastrar" />
     </LinearLayout>
 
     <!-- Botão "Quero Descartar um Produto" -->
@@ -86,5 +88,6 @@
         android:textSize="24sp"
         android:textColor="#FFFFFF"
         android:backgroundTint="@color/colorPrimary"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:onClick="btnDescarte" />
 </LinearLayout>
